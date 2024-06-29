@@ -1,0 +1,18 @@
+import pyttsx3
+from time import sleep
+
+# Open the target file with accurate path
+# Open the file in read mode
+
+file_path = r"C:\Users\OneDrive\Documents\Desktop\demo.txt"
+with open(file_path, "r") as b:
+    book = b.readlines()
+
+# Initialize the text-to-speech engine
+engine = pyttsx3.init()
+
+# Iterate over each line in the book and read it out loud
+for line in book:
+    engine.say(line)
+    engine.runAndWait()
+    sleep(1)
